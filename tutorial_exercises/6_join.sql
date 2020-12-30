@@ -91,6 +91,5 @@ SELECT game.mdate,
        game.team2,
        SUM(CASE WHEN goal.teamid = game.team2 THEN 1 ELSE 0 END) AS score2
 
-
 FROM game LEFT OUTER JOIN goal on game.id = goal.matchid
 GROUP BY game.mdate, goal.matchid, game.team1, game.team2;
